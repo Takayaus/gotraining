@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  
+
   devise_for :users
+
+  resources :users, only: [:index,:show]
 
   root 'staticpages#home'
   get '/home', to:'staticpages#home'

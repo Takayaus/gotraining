@@ -9,16 +9,21 @@
   </head>
 
   <body>
+  <header>
+        <%= link_to "トップ", home_path %>
       <% if user_signed_in? %>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        <%= link_to "トップ", root_path %>
+        <%= link_to "ユーザー一覧", users_path(current_user) %>
         <%= link_to '投稿画面へ', '#' %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       <% else %>
         <%= link_to "ログイン", new_user_session_path, class: 'post' %>
         <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
       <% end %>
-      <%= link_to "会社概要", "#" %>
-      <%= link_to "お問い合わせ", "#" %>
+      </header>
+      <footer>
+      <%= link_to "会社概要", about_path %>
+      <%= link_to "お問い合わせ", contact_path %>
+      </footer>
     <%= yield %>
   </body>
 </html>
