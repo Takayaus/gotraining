@@ -1,3 +1,10 @@
 <h1>ユーザー詳細</h1>
 <%= @user.name %>
 <%= @user.email %>
+<% if @user.posts.any? %>
+    <h3>Posts (<%= @user.posts.count %>)</h3>
+        <ol class="microposts">
+            <%= render @posts %>
+        </ol>
+<%= will_paginate @posts %>
+<% end %>

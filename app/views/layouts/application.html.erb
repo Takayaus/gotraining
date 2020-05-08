@@ -12,8 +12,7 @@
   <header>
         <%= link_to "トップ", home_path %>
       <% if user_signed_in? %>
-        <%= link_to "ユーザー一覧", users_path(current_user) %>
-        <%= link_to '投稿画面へ', '#' %>
+        <%= link_to "ユーザー一覧", users_path %>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       <% else %>
         <%= link_to "ログイン", new_user_session_path, class: 'post' %>

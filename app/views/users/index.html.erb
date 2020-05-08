@@ -1,5 +1,7 @@
 <h1>ユーザー一覧</h1>
+<%= will_paginate %>
     <% @users.each.with_index(1) do |user, n| %>
        <%= n %> <%= link_to user.name, user_path(user) %>
         <%= user.email %>
     <% end %>
+    <%= will_paginate %>
