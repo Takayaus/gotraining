@@ -6,6 +6,19 @@
           <span><%= link_to "view my profile", current_user %></span>
           <span><%= pluralize(current_user.posts.count, "post") %></span>
         </section>
+
+        <% @user ||= current_user %>
+        <div class="stats">
+          <a href="<%= following_user_path(@user) %>">
+              <%= @user.following.count %>
+            following
+          </a>
+          <a href="<%= followers_user_path(@user) %>">
+              <%= @user.followers.count %>
+            followers
+          </a>
+        </div>
+
     <section class="post_form">
       <%= form_for(@post) do |f| %>
         <p><%= f.label :title, '題目' %>
@@ -18,6 +31,8 @@
         <%= f.collection_select :gym_id, Gym.all, :id, :name, include_blank: '選択して下さい' %>
         <%= f.submit "Post", class: "btn btn-primary" %>
       <% end %>
+
+
           <% if @feed_items.any? %>
             <ol class="microposts">
               <%= render @feed_items %>

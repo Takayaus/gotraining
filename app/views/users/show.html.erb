@@ -6,5 +6,13 @@
         <ol class="microposts">
             <%= render @posts %>
         </ol>
+
+  <% if current_user.following?(@user) %>
+    <%= render 'unfollow' %>
+  <% else %>
+    <%= render 'follow' %>
+  <% end %>
+
+
 <%= will_paginate @posts %>
 <% end %>
