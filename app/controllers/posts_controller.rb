@@ -9,6 +9,7 @@ class PostsController < ApplicationController
         if @post.save
             redirect_to root_url
         else
+            @feed_posts = current_user.feed.paginate(page: params[:page])
             render 'staticpages/home'
         end
     end

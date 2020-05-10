@@ -33,11 +33,11 @@
       <% end %>
 
 
-          <% if @feed_items.any? %>
-            <ol class="microposts">
-              <%= render @feed_items %>
+          <% if @feed_posts.any? %>
+            <ol class="posts">
+              <%= render @feed_posts %>
             </ol>
-            <%= will_paginate @feed_items %>
+            <%= will_paginate @feed_posts %>
           <% end %>
         </section>
     </aside>
