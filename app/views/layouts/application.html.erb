@@ -13,10 +13,10 @@
         <%= link_to "トップ", home_path %>
       <% if user_signed_in? %>
         <%= link_to "ユーザー一覧", users_path %>
+        <%= link_to "投稿一覧", posts_path %>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       <% else %>
         <%= link_to "ログイン", new_user_session_path, class: 'post' %>
-        <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
       <% end %>
       </header>
       <footer>
@@ -24,5 +24,6 @@
       <%= link_to "お問い合わせ", contact_path %>
       </footer>
     <%= yield %>
+    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>

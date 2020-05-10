@@ -1,18 +1,22 @@
 <h1>ユーザー詳細</h1>
 <%= @user.name %>
 <%= @user.email %>
+
+<% unless current_user?(@user) %>
+<div id="follow_form">
+<% if current_user.following?(@user) %>
+  <%= render 'unfollow' %>
+<% else %>
+  <%= render 'follow' %>
+<% end %>
+</div>
+<% end %>
+
 <% if @user.posts.any? %>
     <h3>Posts (<%= @user.posts.count %>)</h3>
         <ol class="microposts">
             <%= render @posts %>
         </ol>
-
-  <% if current_user.following?(@user) %>
-    <%= render 'unfollow' %>
-  <% else %>
-    <%= render 'follow' %>
-  <% end %>
-
 
 <%= will_paginate @posts %>
 <% end %>

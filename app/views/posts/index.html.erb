@@ -1,0 +1,11 @@
+<h1>投稿一覧</h1>
+
+<% @posts.each do |post| %>
+    <span><%= link_to post.user.name, post.user %></span>
+    <span><%= post.title %></span>
+    <span><%= post.content %></span>
+    <span>At <%= post.gym.name %></span>
+    <% if current_user?(post.user) %>
+    <%= link_to "削除", post, method: :delete, data: { confirm: "You sure?" } %>
+    <% end %>
+    <% end %>

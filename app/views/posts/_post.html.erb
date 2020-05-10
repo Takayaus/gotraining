@@ -1,8 +1,12 @@
 <li id="post-<%= post.id %>">
   <span><%= link_to post.user.name, post.user %></span>
+  <span><%= post.title %></span>
   <span><%= post.content %></span>
   <span>At <%= post.gym.name %></span>
   <span>
     Posted <%= time_ago_in_words(post.created_at) %> ago.
+    <% if current_user?(post.user) %>
+    <%= link_to "削除", post, method: :delete, data: { confirm: "You sure?" } %>
+    <% end %>
   </span>
 </li>
