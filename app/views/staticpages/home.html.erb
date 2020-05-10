@@ -1,6 +1,4 @@
 <% if user_signed_in? %>
-  <div class="row">
-    <aside class="col-md-4">
         <section class="user_info">
           <h1><%= current_user.name %></h1>
           <span><%= link_to "view my profile", current_user %></span>
@@ -17,12 +15,11 @@
               <%= @user.followers.count %>
             followers
           </a>
-        </div>
 
     <section class="post_form">
       <%= form_for(@post) do |f| %>
         <p><%= f.label :title, '題目' %>
-           <%= f.text_field :title %>
+           <%= f.text_field :title %> 
         </p>
         <p>
           <%= f.label :title, '内容' %>
@@ -39,8 +36,7 @@
             </ol>
             <%= will_paginate @feed_posts %>
           <% end %>
-        </section>
-    </aside>
+
   </div>
 <% else %>
     <h1>ようこそ、Goトレーニングへ！</1>

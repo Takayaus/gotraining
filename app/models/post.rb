@@ -3,4 +3,5 @@ class Post < ApplicationRecord
   validates :user_id, presence: true
   belongs_to :user
   belongs_to :gym, optional: true
+  default_scope -> { order(created_at: :desc) }
 end
