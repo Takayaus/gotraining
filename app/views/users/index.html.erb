@@ -2,6 +2,7 @@
 
 <%= will_paginate %>
     <% @users.each.with_index(1) do |user, n| %>
+        <%= gravatar_for user %>
        <%= n %> <%= link_to user.name, user_path(user) %>
         <%= user.email %>
     <% end %>
