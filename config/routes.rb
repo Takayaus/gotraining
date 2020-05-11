@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :users, only: [:index,:show]
   resources :relationships,       only: [:create, :destroy]
   resources :posts
-  
   root 'staticpages#home'
   get '/home', to:'staticpages#home'
   get '/contact', to:'staticpages#contact'

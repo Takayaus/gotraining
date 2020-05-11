@@ -1,5 +1,12 @@
 <h1>投稿一覧</h1>
 
+<%= search_form_for @q do |f| %>
+    <%= f.label :ジム名 %>
+
+    <%= f.collection_select :gym_name_cont, Gym.all, :name, :name, {include_blank: '選択してください'}%>
+    <%= f.button :search %>
+  <%- end %>
+
 <% @posts.each do |post| %>
     <span><%= link_to post.user.name, post.user %></span>
     <span><%= post.title %></span>

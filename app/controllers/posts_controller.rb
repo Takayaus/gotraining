@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
 
     def index
-        @posts = Post.all
+        @q = Post.includes(:gym).ransack(params[:q])
+        @posts = @q.result(distinct: true)
     end
 
     def create
@@ -25,5 +26,9 @@ class PostsController < ApplicationController
     private
     def post_params
         params.require(:post).permit(:title, :content, :gym_id)
+    end
+
+    def params_post_search
+        params.permit(:search_gym, :search_title)
     end
 end
