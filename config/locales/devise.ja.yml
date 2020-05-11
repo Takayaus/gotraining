@@ -27,7 +27,11 @@ ja:
         unlock_token: ロック解除用トークン
         updated_at: 更新日
     models:
-      user: ユーザ
+      user: ユーザー一覧
+      admin_user: 管理者
+      comment: コメント
+      gym: ジム一覧
+      post: 投稿一覧
   devise:
     confirmations:
       confirmed: アカウントを登録しました。
