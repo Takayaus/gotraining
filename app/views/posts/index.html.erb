@@ -10,7 +10,6 @@
     <%= gravatar_for post.user %>
     <span><%= link_to post.user.name, post.user %></span>
     <span><%= link_to post.title, post_path(post)%></span>
-    <span><%= post.content %></span>
     <span>At <%= post.gym.name %></span>
     <% if current_user?(post.user) %>
     <%= link_to "削除", post, method: :delete, data: { confirm: "You sure?" } %>
