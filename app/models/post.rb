@@ -5,6 +5,9 @@ class Post < ApplicationRecord
   belongs_to :gym, optional: true
   default_scope -> { order(created_at: :desc) }
 
+  has_many :likes
+  has_many :liked_users, through: :likes, source: :user
+  
   attr_accessor :search_gym, :search_title
 
   def search

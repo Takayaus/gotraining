@@ -4,13 +4,14 @@
     <%= f.label :ジム名 %>
     <%= f.collection_select :gym_name_cont, Gym.all, :name, :name, {include_blank: '選択してください'}%>
     <%= f.button :search %>
-  <%- end %>
+  <% end %>
 
 <% @posts.each do |post| %>
     <%= gravatar_for post.user %>
     <span><%= link_to post.user.name, post.user %></span>
     <span><%= link_to post.title, post_path(post)%></span>
     <span>At <%= post.gym.name %></span>
+    (<%= post.liked_users.count %>)
     <% if current_user?(post.user) %>
     <%= link_to "削除", post, method: :delete, data: { confirm: "You sure?" } %>
     <% end %>

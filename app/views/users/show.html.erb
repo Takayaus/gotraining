@@ -3,6 +3,12 @@
 <%= @user.name %>
 <%= @user.email %>
 
+<h3>いいねしている投稿</h3>
+<% @user.liked_posts.each do |post| %>
+  <%= link_to post.title, post_path(post)%>
+  <%= post.gym.name %>
+<% end %>
+
 <% unless current_user?(@user) %>
 <div id="follow_form">
 <% if current_user.following?(@user) %>
