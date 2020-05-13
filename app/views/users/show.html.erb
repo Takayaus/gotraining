@@ -18,10 +18,9 @@
         <ol class="microposts">
             <%= render @posts %>
         </ol>
-
+        <% end %>
 
         <% if @user.id == current_user.id %>
-
         <% else %>
           <% if @isRoom == true %>
             <p><a href="/rooms/<%= @roomId %>">チャットへ</a>
@@ -33,7 +32,6 @@
               <%= f.submit "チャットを始める" %>
             <% end %>
           <% end %>
-        <% end %>
 
 <%= will_paginate @posts %>
 <% end %>
