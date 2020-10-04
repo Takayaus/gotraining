@@ -1,9 +1,16 @@
-<h1>ユーザー一覧</h1>
-
-<%= will_paginate %>
-    <% @users.each.with_index(1) do |user, n| %>
-        <%= gravatar_for user %>
-       <%= n %> <%= link_to user.name, user_path(user) %>
-        <%= user.email %>
-    <% end %>
+<div class="container">
+    <h3 class="users-heading">ユーザー一覧</h3>
     <%= will_paginate %>
+            <% @users.each.with_index(1) do |user, n| %>
+                <section class="users-wrapper">
+                <div class="users-img">
+                <%= gravatar_for user %>
+                </div>
+                <div class="users-body">
+                    <h4><%= n %> <%= link_to user.name, user_path(user) %></h4>
+                    <%= user.email %>
+                </div>
+                </section>
+            <% end %>
+    <%= will_paginate %>
+</div>

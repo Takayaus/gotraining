@@ -1,3 +1,4 @@
+<div class="container">
 <h1>投稿一覧</h1>
 
 <%= search_form_for @q do |f| %>
@@ -7,6 +8,10 @@
   <% end %>
 
 <% @posts.each do |post| %>
+  <div class="media">
+  <svg class="bd-placeholder-img mr-3" width="64" height="64" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 64x64"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">64x64</text></svg>
+  <div class="media-body">
+
     <%= gravatar_for post.user %>
     <span><%= link_to post.user.name, post.user %></span>
     <span><%= link_to post.title, post_path(post)%></span>
@@ -16,3 +21,7 @@
     <%= link_to "削除", post, method: :delete, data: { confirm: "You sure?" } %>
     <% end %>
     <% end %>
+
+    </div>
+    </div>
+    </div>
