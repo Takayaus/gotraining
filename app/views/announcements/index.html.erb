@@ -1,2 +1,7 @@
-<h1>Announcements#index</h1>
-<p>Find me in app/views/announcements/index.html.erb</p>
+<% @announcements.each do |announcement| %>
+<ul>
+    <li>
+        <%= link_to announcement.title, announcement_path(announcement) %>
+    </li>
+</ul>
+<% end %>
