@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
 
+  get 'maps/index'
+
   resources :post_announcements, only: [:index,:show]
   resources :announcements, only: [:index,:show]
-
+  resources :maps, only: [:index]
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   
