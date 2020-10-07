@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'maps/index'
+
   resources :post_announcements, only: [:index,:show]
   resources :announcements, only: [:index,:show]
 
