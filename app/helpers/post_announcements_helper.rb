@@ -1,0 +1,2 @@
+module PostAnnouncementsHelper
+end
