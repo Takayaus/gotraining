@@ -1,0 +1,2 @@
+class PostAnnouncement < ApplicationRecord
+end
