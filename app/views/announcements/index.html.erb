@@ -1,0 +1,7 @@
+<% @announcements.each do |announcement| %>
+<ul>
+    <li>
+        <%= link_to announcement.title, announcement_path(announcement) %>
+    </li>
+</ul>
+<% end %>
