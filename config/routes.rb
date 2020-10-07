@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'announcements/index'
+
+  get 'announcements/show'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   
