@@ -5,7 +5,7 @@ ActiveAdmin.register PostAnnouncement do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :title, :content, :post
+  permit_params :title, :content, :post
   #
   # or
   #
