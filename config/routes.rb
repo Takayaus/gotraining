@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
 
 
+  get 'replies/index'
+
+  get 'replies/show'
+
+  get 'replies/new'
+
+  get 'replies/create'
+
+  get 'replies/update'
+
+  get 'replies/destroy'
+
   get 'maps/index'
 
   resources :post_announcements, only: [:index,:show]
