@@ -83,17 +83,6 @@ ActiveRecord::Schema.define(version: 20201010094944) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
-  create_table "notifications", force: :cascade do |t|
-    t.integer "post_announcement_id"
-    t.integer "visiter_id"
-    t.integer "visited_id"
-    t.string "action"
-    t.boolean "checked", default: false, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.datetime "post"
-  end
-
   create_table "post_announcements", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -125,7 +114,7 @@ ActiveRecord::Schema.define(version: 20201010094944) do
   end
 
   create_table "replies", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "trainer_id"
     t.text "content"
     t.string "image"
     t.datetime "created_at", null: false
