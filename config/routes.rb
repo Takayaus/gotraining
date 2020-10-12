@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  get 'trainers/show'
+
   get 'maps/index'
 
   resources :post_announcements, only: [:index,:show]
