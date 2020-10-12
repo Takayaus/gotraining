@@ -1,17 +1,6 @@
 Rails.application.routes.draw do
 
 
-  get 'replies/index'
-
-  get 'replies/show'
-
-  get 'replies/new'
-
-  get 'replies/create'
-
-  get 'replies/update'
-
-  get 'replies/destroy'
 
   get 'maps/index'
 
@@ -29,6 +18,7 @@ Rails.application.routes.draw do
   resources :likes, only: [:create, :destroy]
 end
 
+  resources :replies
   resources :messages, only:[:create]
   resources :rooms, only:[:create, :show, :index]
   
