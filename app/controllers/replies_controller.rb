@@ -39,7 +39,7 @@ class RepliesController < ApplicationController
 
     private
   def reply_params
-    params.require(:treply).permit(:content, :image)
+    params.require(:reply).permit(:content, :image)
   end
 
 end
