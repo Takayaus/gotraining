@@ -1,0 +1,7 @@
+<% @replies.each do |reply| %>
+<ul>
+    <li><%= link_to reply.content, post_reply_path(reply.post_id, reply.id)%></li>
+    <p>TITLE:<%= reply.post.content %>
+    </p>
+</ul>
+<% end %>

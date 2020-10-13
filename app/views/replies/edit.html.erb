@@ -1,0 +1,9 @@
+<div>
+    <%= form_with(url: post_reply_path, method: :patch, local: true ) do |f| %>
+    <div>
+        <%= f.label :content, "回答" %><br>
+        <%= f.text_area :content %>
+    </div>
+    <%= f.submit %>
+    <% end %>
+</div>

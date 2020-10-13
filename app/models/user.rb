@@ -19,6 +19,8 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_posts, through: :likes, source: :post
   
+  has_many :replies
+
   def feed
     Post.where(user_id: active_relationships.select(:followed_id))
     .or(Post.where(user_id: id))

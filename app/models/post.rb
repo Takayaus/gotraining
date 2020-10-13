@@ -8,6 +8,7 @@ class Post < ApplicationRecord
   has_many :likes
   has_many :liked_users, through: :likes, source: :user
   
+  has_many :replies
   attr_accessor :search_gym, :search_title
 
   def search
