@@ -1,2 +1,5 @@
-<h1>Replies#show</h1>
-<p>Find me in app/views/replies/show.html.erb</p>
+<p>回答内容：</p><%= @reply.content %>
+<p>回答者名前：</p><%= @reply.user.name %>
+<p>質問内容：</p><%= @reply.post.content %>
+<%= link_to "編集する", edit_post_reply_path(@reply) %>
+<%= link_to '削除', post_reply_path(@reply), method: :delete, data: { confirm: "削除しますか？"}, class:"btn btn-primary"  %>

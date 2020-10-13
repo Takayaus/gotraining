@@ -14,13 +14,18 @@ Rails.application.routes.draw do
   
   devise_for :users
 
-  resources :users, only: [:index,:show]
+  resources :users, only: [:index,:show] do
+    resources :replies, only: [:index] #過去の回答一覧
+  end
+
   resources :relationships,       only: [:create, :destroy]
+
   resources :posts, only:[:index, :show, :create] do
   resources :likes, only: [:create, :destroy]
+  resources :replies, only: [:new, :create, :show, :edit, :update, :destroy]
 end
 
-  resources :replies
+  # resources :replies, only: [:show, :update, :destroy]
   resources :messages, only:[:create]
   resources :rooms, only:[:create, :show, :index]
   
